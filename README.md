@@ -1,4 +1,11 @@
-# Interactive Brokers Gateway Docker
+# Interactive Brokers Gateway Docker (Leaner!)
+
+This repo takes mvberg's work and optimises it for performance:
+
+* Ubuntu 19.04 (Default of 16.04 isn't docker optimised)
+* Others to come as I discover them
+
+
 
 IB Gateway running in Docker with [IB Controller](https://github.com/ib-controller/ib-controller/) and VNC
 
