@@ -3,18 +3,18 @@
 This repo takes mvberg's work and optimises it for performance:
 
 * Ubuntu 19.04 (Default of 16.04 isn't docker optimised)
-* Others to come as I discover them
+* Changed to TWS Gateway stable (v972.1v)
 
 
 
 IB Gateway running in Docker with [IB Controller](https://github.com/ib-controller/ib-controller/) and VNC
 
-* TWS Gateway: v974.4g
-* IB Controller: v3.2.0
+* TWS Gateway: v972.1v
+* IB Controller: v3.2.0.5
 
 ### Docker Hub image
 
-* https://hub.docker.com/r/mvberg/ib-gateway-docker
+* dvasdekis/ib-gateway-docker-lean
 
 ### Getting Started
 
