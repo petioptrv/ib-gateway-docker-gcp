@@ -1,7 +1,8 @@
 version: '2'
 services:
   tws:
-    build: .
+    #build: .
+    image: dvasdekis/ib-gateway-docker-lean:v972
     ports:
       - "4003:4003"
       - "5901:5900"
@@ -11,8 +12,7 @@ services:
     environment:
       - TZ=America/Chicago
       # Variables pulled from /IBController/IBControllerGatewayStart.sh
-      - VNC_PASSWORD=1234 # CHANGEME
-      - TWS_MAJOR_VRSN=974
+      - TWS_MAJOR_VRSN=972
       - IBC_INI=/root/IBController/IBController.ini
       - IBC_PATH=/opt/IBController
       - TWS_PATH=/root/Jts
