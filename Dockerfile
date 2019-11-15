@@ -46,8 +46,9 @@ RUN dos2unix /usr/bin/xvfb-daemon-run \
 COPY ./ib/IBController.ini /root/IBController/IBController.ini
 COPY ./ib/jts.ini /root/Jts/jts.ini
 
-# Optimisations for Java VM are applied here
-RUN echo '-Xms1024m' >> /root/Jts/ibgateway/972/ibgateway.vmoptions
-RUN echo '-Xmx1536m' >> /root/Jts/ibgateway/972/ibgateway.vmoptions
+# Overwrite vmoptions file
+RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
+COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
+
 
 CMD bash runscript.sh

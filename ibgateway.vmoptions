@@ -1,17 +1,30 @@
-### keep on update	
--Xmx1768m	
+#
+# This file contains VM parameters for IB Gateway 972.
+# Each parameter should be defined in a separate line and the
+# last line must be followed by a line feed. No leading or
+# trailing whitespaces are allowed in the same line, where a
+# parameter is defined.
+#
+# Lines starting with a '#' character are treated as comments
+# and ignored. Additionally, if a line contains a
+# '### keep on update' string, all parameters defined below will
+# be preserved on update.
+#
 
-# GC settings	
--XX:+UseG1GC	
--XX:MaxGCPauseMillis=200	
--XX:ParallelGCThreads=20	
--XX:ConcGCThreads=5	
--XX:InitiatingHeapOccupancyPercent=70	
+# GC settings
+-XX:+UseG1GC
+-XX:MaxGCPauseMillis=200
+-XX:ParallelGCThreads=20
+-XX:ConcGCThreads=1
+-XX:InitiatingHeapOccupancyPercent=70
 
-
--Dinstaller.uuid=a36b3c9f-d06c-4b83-ac13-7a6547543e19	
--DvmOptionsPath=/root/Jts/ibgateway/972/ibgateway.vmoptions	
--Dsun.awt.nopixfmt=true	
--Dsun.java2d.noddraw=true	
--Dswing.boldMetal=false	
+-Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
+-DvmOptionsPath=/root/Jts/ibgateway/972/ibgateway.vmoptions
+-Dsun.awt.nopixfmt=true
+-Dsun.java2d.noddraw=true
+-Dswing.boldMetal=false
 -Dsun.locale.formatasdefault=true
+
+### keep on update
+-Xms1024m
+-Xmx1536m
