@@ -4,6 +4,8 @@ This repo takes mvberg's work and optimises it for performance:
 
 * Ubuntu 19.04 (Default of 16.04 isn't docker optimised)
 * Changed to TWS Gateway stable (v972.1v)
+* Removed x11VNC server
+* Removed installers after they are no longer used
 
 
 
