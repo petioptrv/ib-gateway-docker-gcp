@@ -16,7 +16,7 @@
 # GC settings
 -XX:+UseG1GC
 -XX:MaxGCPauseMillis=200
--XX:ParallelGCThreads=20
+-XX:ParallelGCThreads=1
 -XX:ConcGCThreads=1
 -XX:InitiatingHeapOccupancyPercent=70
 
