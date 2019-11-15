@@ -11,6 +11,8 @@
 # be preserved on update.
 #
 
+### keep on update
+
 # GC settings
 -XX:+UseG1GC
 -XX:MaxGCPauseMillis=200
@@ -25,7 +27,7 @@
 -Dswing.boldMetal=false
 -Dsun.locale.formatasdefault=true
 
-### keep on update
+# Increase the memory available to the Java VM
 -Xms1024m
 -Xmx1536m
 
