@@ -17,7 +17,7 @@ IB Gateway running in Docker with [IB Controller](https://github.com/ib-controll
 
 ### Docker Hub image
 
-* dvasdekis/ib-gateway-docker-lean
+* [dvasdekis/ib-gateway-docker-lean](https://hub.docker.com/r/dvasdekis/ib-gateway-docker-lean)
 
 ### Getting Started
 
