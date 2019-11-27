@@ -16,9 +16,9 @@
 # GC settings
 -XX:+UseG1GC
 -XX:MaxGCPauseMillis=200
--XX:ParallelGCThreads=5
+-XX:ParallelGCThreads=10
 -XX:ConcGCThreads=1
--XX:InitiatingHeapOccupancyPercent=70
+-XX:InitiatingHeapOccupancyPercent=30
 
 -Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
 -DvmOptionsPath=/root/Jts/ibgateway/972/ibgateway.vmoptions
@@ -28,7 +28,6 @@
 -Dsun.locale.formatasdefault=true
 
 # Increase the memory available to the Java VM
--Xms1024m
 -Xmx1536m
 
 
