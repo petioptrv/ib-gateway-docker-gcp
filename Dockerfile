@@ -5,6 +5,8 @@ LABEL maintainer="Mike Ehrenberg <mvberg@gmail.com>"
 RUN  apt-get update \
   && apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common dos2unix
 
+
+
 # Setup IB TWS
 RUN mkdir -p /opt/TWS
 WORKDIR /opt/TWS
@@ -50,5 +52,8 @@ COPY ./ib/jts.ini /root/Jts/jts.ini
 RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
 COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
 
+# Add stackdriver logging
+curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
+sudo bash install-logging-agent.sh
 
 CMD bash runscript.sh
