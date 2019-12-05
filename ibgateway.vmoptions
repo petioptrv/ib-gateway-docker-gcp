@@ -28,6 +28,6 @@
 -Dsun.locale.formatasdefault=true
 
 # Increase the memory available to the Java VM
--Xmx1536m
+-Xmx6144m
 
 
