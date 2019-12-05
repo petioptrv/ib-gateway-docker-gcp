@@ -1,12 +1,13 @@
-# Interactive Brokers Gateway Docker (Leaner!)
+# Interactive Brokers Gateway Docker for GCP
 
-This repo takes mvberg's work and optimises it for performance:
+This repo takes mvberg's work and optimises it for GCP (targeting an n1-standard-2 instance):
 
 * Ubuntu 19.04 (Default of 16.04 isn't docker optimised)
 * Changed to TWS Gateway stable (v972.1v)
-* Increased Java minimum RAM to 1GB, and reduced concurrent garbage collectors to 1 
+* Increased Java maximum RAM to 6GB, and reduced concurrent garbage collectors to 1 
 * Removed x11VNC server
 * Removed installers after they are no longer used
+* Adds Stackdriver logging
 
 
 
@@ -17,16 +18,11 @@ IB Gateway running in Docker with [IB Controller](https://github.com/ib-controll
 
 ### Docker Hub image
 
-* [dvasdekis/ib-gateway-docker-lean](https://hub.docker.com/r/dvasdekis/ib-gateway-docker-lean)
+* [dvasdekis/ib-gateway-docker](https://hub.docker.com/r/dvasdekis/ib-gateway-docker)
 
 ### Getting Started
 
-```bash
-> git clone
-> cd ib-gateway-docker
-> docker build .
-> docker-compose up
-```
+`gcloud compute instances create-with-container my-ib-gateway --container-image="docker.io/dvasdekis/ib-gateway-docker:v972" --container-env-file="./ibgateway.env" --machine-type=n1-standard-2 --container-env TWSUSERID="$tws_user_id",TWSPASSWORD="$tws_password",TRADING_MODE=paper --zone="my-preferred-zone"`
 
 #### Expected output
 
@@ -53,25 +49,12 @@ tws_1  | +
 tws_1  | Forking :::4001 onto 0.0.0.0:4003\n
 ```
 
-You will now have the IB Gateway app running on port 4003 and VNC on 5901.
+You will now have the IB Gateway app running on port 4003.
 
 See [docker-compose.yml](docker-compose.yml) for configuring VNC password, accounts and trading mode.
 
 Please do not open your box to the internet.
 
-### Testing VNC
-
-* localhost:5901
-
-![vnc](docs/ib_gateway_vnc.jpg)
-
-### Demo Accounts
-
-It seems that all of the `demo` accounts are dead for good:
-
-* edemo
-* fdemo
-* pmdemo
 
 ### Troubleshooting
 
