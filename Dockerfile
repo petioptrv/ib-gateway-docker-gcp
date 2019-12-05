@@ -51,8 +51,4 @@ COPY ./ib/jts.ini /root/Jts/jts.ini
 RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
 COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
 
-# Add stackdriver logging
-RUN curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
-RUN bash install-logging-agent.sh
-
 CMD bash runscript.sh
