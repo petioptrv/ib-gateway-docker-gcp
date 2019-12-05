@@ -53,6 +53,6 @@ COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
 
 # Add stackdriver logging
 RUN curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
-RUN sudo bash install-logging-agent.sh
+RUN bash install-logging-agent.sh
 
 CMD bash runscript.sh
