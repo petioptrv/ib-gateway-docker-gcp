@@ -18,7 +18,7 @@
 -XX:MaxGCPauseMillis=200
 -XX:ParallelGCThreads=10
 -XX:ConcGCThreads=1
--XX:InitiatingHeapOccupancyPercent=30
+-XX:InitiatingHeapOccupancyPercent=70
 
 -Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
 -DvmOptionsPath=/root/Jts/ibgateway/972/ibgateway.vmoptions
