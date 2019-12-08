@@ -7,7 +7,7 @@ This repo takes mvberg's work and optimises it for GCP (targeting an n1-standard
 * Increased Java maximum RAM to 6GB, and reduced concurrent garbage collectors to 1 
 * Removed x11VNC server
 * Removed installers after they are no longer used
-* Adds Stackdriver logging
+* Works with Stackdriver logging
 
 
 
