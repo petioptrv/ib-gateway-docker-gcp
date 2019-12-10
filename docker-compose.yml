@@ -1,11 +1,10 @@
 version: '2'
 services:
   tws:
-    #build: .
-    image: dvasdekis/ib-gateway-docker-lean:v972
+    build: .
+    #image: dvasdekis/ib-gateway-docker:v972
     ports:
-      - "4003:4003"
-      - "5901:5900"
+      - "4001:4001"
     volumes:
       - ./ib/IBController.ini:/root/IBController/IBController.ini
       - ./ib/jts.ini:/root/Jts/jts.ini
@@ -20,8 +19,8 @@ services:
       - LOG_PATH=/opt/IBController/Logs
       - JAVA_PATH=/opt/i4j_jres/1.8.0_152/bin # JRE is bundled starting with TWS 952 
       - TRADING_MODE=paper # either paper or live
-      - TWSUSERID=fdemo # IB account
-      - TWSPASSWORD=demouser # IB account password
+      - TWSUSERID=dva3dek79 # IB account fdemo
+      - TWSPASSWORD=r9Wf4g7djxrB8XMB8hdsA # IB account password demouser
       - FIXUSERID=
       - FIXPASSWORD=
       - APP=GATEWAY

@@ -2,8 +2,8 @@ FROM ubuntu:19.04
 
 LABEL maintainer="Mike Ehrenberg <mvberg@gmail.com>"
 
-RUN  apt-get update \
-  && apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common dos2unix curl
+RUN apt-get update
+RUN apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common dos2unix curl supervisor
 
 
 # Setup IB TWS
@@ -51,4 +51,6 @@ COPY ./ib/jts.ini /root/Jts/jts.ini
 RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
 COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
 
-CMD bash runscript.sh
+COPY ./supervisord.conf /root/supervisord.conf
+
+CMD /usr/bin/supervisord -c /root/supervisord.conf
