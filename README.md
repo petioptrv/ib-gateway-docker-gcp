@@ -4,11 +4,9 @@ This repo takes mvberg's work and optimises it for GCP (targeting an n1-standard
 
 * Ubuntu 19.04 (Default of 16.04 isn't docker optimised)
 * Changed to TWS Gateway stable (v972.1v)
-* Increased Java maximum RAM to 6GB, and reduced concurrent garbage collectors to 1 
-* Removed x11VNC server
 * Removed installers after they are no longer used
 * Works with Stackdriver logging
-
+* Optimisation of the Java runtime options
 
 
 IB Gateway running in Docker with [IB Controller](https://github.com/ib-controller/ib-controller/) and VNC
@@ -26,7 +24,8 @@ IB Gateway running in Docker with [IB Controller](https://github.com/ib-controll
 
 #### Expected output
 
-```bash
+Visible in StackDriver:
+```
 Creating ibgatewaydocker_tws_1 ...
 Creating ibgatewaydocker_tws_1 ... done
 Attaching to ibgatewaydocker_tws_1
@@ -37,13 +36,13 @@ tws_1  | Starting x11vnc.
 tws_1  |
 tws_1  | +==============================================================================
 tws_1  | +
-tws_1  | + IBController version 3.2.0
+tws_1  | + IBController version 3.2.0.5
 tws_1  | +
-tws_1  | + Running GATEWAY 960
+tws_1  | + Running GATEWAY 972
 tws_1  | +
 tws_1  | + Diagnostic information is logged in:
 tws_1  | +
-tws_1  | + /opt/IBController/Logs/ibc-3.2.0_GATEWAY-960_Tuesday.txt
+tws_1  | + /opt/IBController/Logs/ibc-3.2.0.5_GATEWAY-960_Tuesday.txt
 tws_1  | +
 tws_1  | +
 tws_1  | Forking :::4001 onto 0.0.0.0:4003\n
