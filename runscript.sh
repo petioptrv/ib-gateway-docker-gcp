@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# kill any existing socat or java processes, so we can run this repeatedly
+pgrep socat | xargs kill
+pgrep java | xargs kill
+
 xvfb-daemon-run /opt/IBController/Scripts/DisplayBannerAndLaunch.sh &
 # Tail latest in log dir
 sleep 1
