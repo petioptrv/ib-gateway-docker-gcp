@@ -17,7 +17,7 @@
 -XX:+UseG1GC
 -XX:MaxGCPauseMillis=200
 -XX:ParallelGCThreads=10
--XX:ConcGCThreads=2
+-XX:ConcGCThreads=1
 -XX:InitiatingHeapOccupancyPercent=45
 
 -Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
@@ -28,6 +28,6 @@
 -Dsun.locale.formatasdefault=true
 
 # Increase the memory available to the Java VM
--Xmx2048m
+-Xmx1536m
 
 
