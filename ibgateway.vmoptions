@@ -15,13 +15,14 @@
 
 # GC settings
 -XX:+UseG1GC
--XX:MaxGCPauseMillis=200
+-XX:MaxGCPauseMillis=500
 -XX:ParallelGCThreads=20
 -XX:ConcGCThreads=4
 -XX:InitiatingHeapOccupancyPercent=45
 -XX:+UseStringDeduplication
--XX:+UseContainerSupport
--XX:MaxRAMPercentage=75.0
+-XX:MaxRAM=1536M
+-XX:MinRAMFraction=4
+-XX:MaxRAMFraction=2
 
 
 -Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
