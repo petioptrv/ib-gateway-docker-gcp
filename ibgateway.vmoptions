@@ -17,8 +17,10 @@
 -XX:+UseG1GC
 -XX:MaxGCPauseMillis=200
 -XX:ParallelGCThreads=20
--XX:ConcGCThreads=5
+-XX:ConcGCThreads=4
 -XX:InitiatingHeapOccupancyPercent=45
+-XX:+UseStringDeduplication
+-Xmx1024m
 
 -Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
 -DvmOptionsPath=/root/Jts/ibgateway/972/ibgateway.vmoptions
@@ -27,7 +29,5 @@
 -Dswing.boldMetal=false
 -Dsun.locale.formatasdefault=true
 
-# Increase the memory available to the Java VM
--Xmx1536m
 
 
