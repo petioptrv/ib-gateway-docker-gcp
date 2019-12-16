@@ -20,7 +20,7 @@
 -XX:ConcGCThreads=4
 -XX:InitiatingHeapOccupancyPercent=45
 -XX:+UseStringDeduplication
--XX:MaxRAM=1536M
+-XX:MaxRAM=2048M
 -XX:MinRAMFraction=4
 -XX:MaxRAMFraction=2
 
