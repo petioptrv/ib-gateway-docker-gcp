@@ -2,8 +2,7 @@ FROM ubuntu:19.04
 
 LABEL maintainer="Mike Ehrenberg <mvberg@gmail.com>"
 
-RUN apt-get update
-RUN apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common dos2unix curl supervisor x11vnc
+RUN apt-get update && apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common dos2unix curl supervisor x11vnc
 
 # Setup IB TWS
 RUN mkdir -p /opt/TWS
