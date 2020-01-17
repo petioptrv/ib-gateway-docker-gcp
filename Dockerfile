@@ -26,7 +26,6 @@ RUN rm /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
 
 ENV DISPLAY :0
 
-ADD runscript.sh runscript.sh
 ADD ./vnc/xvfb_init /etc/init.d/xvfb
 ADD ./vnc/vnc_init /etc/init.d/vnc
 ADD ./vnc/xvfb-daemon-run /usr/bin/xvfb-daemon-run
