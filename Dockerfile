@@ -30,15 +30,13 @@ ADD ./vnc/xvfb_init /etc/init.d/xvfb
 ADD ./vnc/vnc_init /etc/init.d/vnc
 ADD ./vnc/xvfb-daemon-run /usr/bin/xvfb-daemon-run
 
-RUN chmod -R u+x runscript.sh \
-  && chmod -R 777 /usr/bin/xvfb-daemon-run \
+RUN chmod -R 777 /usr/bin/xvfb-daemon-run \
   && chmod 777 /etc/init.d/xvfb \
   && chmod 777 /etc/init.d/vnc
 
 RUN dos2unix /usr/bin/xvfb-daemon-run \
   && dos2unix /etc/init.d/xvfb \
-  && dos2unix /etc/init.d/vnc \
-  && dos2unix runscript.sh
+  && dos2unix /etc/init.d/vnc
 
 # Below files copied during build to enable operation without volume mount
 COPY ./ib/IBController.ini /root/IBController/IBController.ini
