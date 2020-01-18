@@ -22,7 +22,7 @@
 -XX:+UseStringDeduplication
 -XX:MaxRAM=2048M
 -XX:MinRAMFraction=4
--XX:MaxRAMFraction=2
+-XX:MaxRAMFraction=1.5
 
 
 -Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
