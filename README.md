@@ -7,6 +7,7 @@ This repo takes mvberg's work and optimises it for GCP (targeting a g1-small ins
 * Removed installers after they are no longer used
 * Works with Stackdriver logging
 * Optimisation of the Java runtime options
+* VNC scripting (which didn't restart the container on error) fixed via Supervisor
 
 
 IB Gateway running in Docker with [IB Controller](https://github.com/ib-controller/ib-controller/) and VNC
