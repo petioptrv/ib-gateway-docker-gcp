@@ -28,8 +28,8 @@
 -XX:MaxRAMFraction=2
 # Try and kill the Java process if we run out of memory or encounter any error, usually due to IB leaks. Supervisor will restart IB for us.
 # Note: We may have to try and also kill IBController, if IBController doesn't restart the IB Gateway for us
--XX:OnOutOfMemoryError="kill -9 %p"
--XX:OnError="kill -9 %p"
+-XX:ExitOnOutOfMemoryError=true
+
 
 -Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
 -DvmOptionsPath=/root/Jts/ibgateway/972/ibgateway.vmoptions
