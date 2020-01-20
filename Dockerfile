@@ -34,6 +34,9 @@ COPY ./ib/jts.ini /root/Jts/jts.ini
 RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
 COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
 
+COPY ./restart-docker-vm.sh /root/restart-docker-vm.sh
+RUN chmod a+x /root/restart-docker-vm.sh
+
 COPY ./supervisord.conf /root/supervisord.conf
 
 CMD /usr/bin/supervisord -c /root/supervisord.conf
