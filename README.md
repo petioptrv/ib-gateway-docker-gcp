@@ -21,7 +21,7 @@ IB Gateway running in Docker with [IB Controller](https://github.com/ib-controll
 
 ### Getting Started
 
-`gcloud compute instances create-with-container my-ib-gateway --container-image="docker.io/dvasdekis/ib-gateway-docker:v972" --container-env-file="./ibgateway.env" --machine-type=n1-standard-2 --container-env TWSUSERID="$tws_user_id",TWSPASSWORD="$tws_password",TRADING_MODE=paper --zone="my-preferred-zone"`
+`gcloud compute instances create-with-container my-ib-gateway --container-image="docker.io/dvasdekis/ib-gateway-docker:v972" --container-env-file="./ibgateway.env" --machine-type=e2-small --container-env TWSUSERID="$tws_user_id",TWSPASSWORD="$tws_password",TRADING_MODE=paper --zone="my-preferred-zone"`
 
 #### Expected output
 
