@@ -1,6 +1,6 @@
 # Interactive Brokers Gateway Docker for GCP
 
-This repo takes mvberg's work and optimises it for GCP (targeting a g1-small instance):
+This repo takes mvberg's work and optimises it for GCP (targeting a e2-small instance):
 
 * Ubuntu 19.04 (Default of 16.04 isn't docker optimised)
 * Changed to TWS Gateway stable (v972.1v)
