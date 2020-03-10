@@ -28,7 +28,8 @@ ENV DISPLAY :0
 
 # Below files copied during build to enable operation without volume mount
 COPY ./ib/IBController.ini /root/IBController/IBController.ini
-COPY ./ib/jts.ini /root/Jts/jts.ini
+RUN mkdir -p /root/Jts_config/
+COPY ./ib/jts.ini /root/Jts_config/jts.ini
 
 # Overwrite vmoptions file
 RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
