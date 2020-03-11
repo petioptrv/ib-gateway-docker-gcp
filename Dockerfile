@@ -15,13 +15,11 @@ WORKDIR /opt/TWS
 COPY ./ibgateway-stable-standalone-linux-9721x-x64.sh /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
 RUN chmod a+x /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
 
-# Setup  IBController
+# Install IBController
 RUN mkdir -p /opt/IBController/ && mkdir -p /root/IBController/Logs
 WORKDIR /opt/IBController/
-
-
-COPY ./IBCLinux-3.8.2/*  /opt/IBCLinux-3.8.2/*
-RUN chmod -R u+x /opt/IBCLinux-3.8.2/*.sh && chmod -R u+x /opt/IBCLinux-3.8.2/Scripts/*.sh
+COPY ./IBCLinux-3.8.2/  /opt/IBController/
+RUN chmod -R u+x *.sh && chmod -R u+x scripts/*.sh
 
 WORKDIR /
 

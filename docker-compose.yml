@@ -10,17 +10,17 @@ services:
       - ./ib/jts.ini:/root/Jts/jts.ini
     environment:
       - TZ=America/Chicago
-      # Variables pulled from /IBController/IBControllerGatewayStart.sh
       - TWS_MAJOR_VRSN=972
       - IBC_INI=/root/IBController/IBController.ini
       - IBC_PATH=/opt/IBController
       - TWS_PATH=/root/Jts
-      - TWS_CONFIG_PATH=/root/Jts
+      - TWS_CONFIG_PATH=/root/Jts_config
       - LOG_PATH=/opt/IBController/Logs
       - JAVA_PATH=/opt/i4j_jres/1.8.0_152-tzdata2019c/bin # JRE is bundled starting with TWS 952
-      - TRADING_MODE=paper # either paper or live
-      - TWSUSERID=fdemo # IB account fdemo
-      - TWSPASSWORD=demouser # IB account password demouser
+      - TRADING_MODE=${TWS_TRADING_MODE} # either paper or live. Also listed in jts and IBcontroller.ini
+      - TWSUSERID=${TWS_USER_ID} # IB account
+      - TWSPASSWORD=${TWS_PASSWORD} # IB account password
+      - VNC_PASSWORD=sgym7y9h57wkfha  # do not set a VNC password in test/prod
       - FIXUSERID=
       - FIXPASSWORD=
       - APP=GATEWAY
