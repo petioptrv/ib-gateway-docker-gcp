@@ -18,10 +18,10 @@ RUN chmod a+x /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
 # Setup  IBController
 RUN mkdir -p /opt/IBController/ && mkdir -p /root/IBController/Logs
 WORKDIR /opt/IBController/
-COPY ./IBController-QuantConnect-3.2.0.5.zip  /opt/IBController/IBController-QuantConnect-3.2.0.5.zip
-RUN unzip ./IBController-QuantConnect-3.2.0.5.zip
-RUN chmod -R u+x *.sh && chmod -R u+x Scripts/*.sh
-RUN rm ./IBController-QuantConnect-3.2.0.5.zip
+
+
+COPY ./IBCLinux-3.8.2/*  /opt/IBCLinux-3.8.2/*
+RUN chmod -R u+x /opt/IBCLinux-3.8.2/*.sh && chmod -R u+x /opt/IBCLinux-3.8.2/Scripts/*.sh
 
 WORKDIR /
 
