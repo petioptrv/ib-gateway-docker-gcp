@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 
 # Setup IB TWS
 RUN mkdir -p /opt/TWS
 WORKDIR /opt/TWS
-COPY ./ibgateway-stable-standalone-linux-972-x64.sh /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
+COPY ./ibgateway-stable-standalone-linux-9721x-x64.sh /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
 RUN chmod a+x /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
 
 # Setup  IBController
