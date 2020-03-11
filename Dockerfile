@@ -2,7 +2,7 @@ FROM ubuntu:19.04
 
 LABEL maintainer="Dimitri Vasdekis <dvasdekis@gmail.com>"
 
-RUN apt-get update && apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common curl supervisor x11vnc tmpreaper
+RUN apt-get update && apt-get install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common curl supervisor x11vnc tmpreaper python3-pip
 
 # Setup IB TWS
 RUN mkdir -p /opt/TWS
@@ -35,8 +35,10 @@ COPY ./ib/jts.ini /root/Jts_config/jts.ini
 RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
 COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
 
-COPY ./restart-docker-vm.sh /root/restart-docker-vm.sh
-RUN chmod a+x /root/restart-docker-vm.sh
+# Install Python requirements
+pip3 install supervisor
+
+COPY ./restart-docker-vm.py /root/restart-docker-vm.py
 
 COPY ./supervisord.conf /root/supervisord.conf
 
