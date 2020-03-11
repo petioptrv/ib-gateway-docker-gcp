@@ -24,3 +24,4 @@ services:
       - FIXUSERID=
       - FIXPASSWORD=
       - APP=GATEWAY
+      - XVFB_ARGS="-ac -screen 0 1024x768x16 +extension RANDR"
