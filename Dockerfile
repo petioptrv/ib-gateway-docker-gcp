@@ -36,7 +36,7 @@ RUN rm -f /root/Jts/ibgateway/972/ibgateway.vmoptions
 COPY ./ibgateway.vmoptions /root/Jts/ibgateway/972/ibgateway.vmoptions
 
 # Install Python requirements
-pip3 install supervisor
+RUN pip3 install supervisor
 
 COPY ./restart-docker-vm.py /root/restart-docker-vm.py
 
