@@ -16,11 +16,11 @@ services:
       - TWS_PATH=/root/Jts
       - TWS_CONFIG_PATH=/root/Jts_config
       - LOG_PATH=/opt/IBController/Logs
-      - JAVA_PATH=/opt/i4j_jres/1.8.0_152-tzdata2019c/bin # JRE is bundled starting with TWS 952
-      - TRADING_MODE=${TWS_TRADING_MODE} # either paper or live. Also listed in jts and IBcontroller.ini
-      - TWSUSERID=${TWS_USER_ID} # IB account
-      - TWSPASSWORD=${TWS_PASSWORD} # IB account password
-      - VNC_PASSWORD=sgym7y9h57wkfha  # do not set a VNC password in test/prod
+      - JAVA_PATH=/opt/i4j_jres/1.8.0_152-tzdata2019c/bin
+      - TRADING_MODE=${TWS_TRADING_MODE}
+      - TWSUSERID=${TWS_USER_ID}
+      - TWSPASSWORD=${TWS_PASSWORD}
+      - VNC_PASSWORD=sgym7y9h57wkfha
       - FIXUSERID=
       - FIXPASSWORD=
       - APP=GATEWAY
