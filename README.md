@@ -2,7 +2,7 @@
 
 This repo takes mvberg's work and optimises it for GCP (targeting a e2-small instance):
 
-* Ubuntu 19.04 (Default of 16.04 isn't docker optimised)
+* Ubuntu 20.04 (Default of 16.04 isn't docker optimised)
 * Changed to TWS Gateway stable (v972.1v)
 * Removed installers after they are no longer used
 * Works with Stackdriver logging
@@ -10,10 +10,10 @@ This repo takes mvberg's work and optimises it for GCP (targeting a e2-small ins
 * VNC scripting (which didn't restart the container on error) fixed via Supervisor
 
 
-IB Gateway running in Docker with [IB Controller](https://github.com/ib-controller/ib-controller/) and VNC
+IB Gateway running in Docker with [IBC, successor of IB Controller](https://github.com/IbcAlpha/IBC) and VNC
 
-* TWS Gateway: v972.1v
-* IB Controller: v3.2.0.5
+* TWS Gateway: v978.2c (Current Stable)
+* IB Controller: v3.8.2
 
 ### Docker Hub image
 
@@ -21,7 +21,7 @@ IB Gateway running in Docker with [IB Controller](https://github.com/ib-controll
 
 ### Getting Started
 
-`gcloud compute instances create-with-container my-ib-gateway --container-image="docker.io/dvasdekis/ib-gateway-docker:v972" --container-env-file="./ibgateway.env" --machine-type=e2-small --container-env TWSUSERID="$tws_user_id",TWSPASSWORD="$tws_password",TRADING_MODE=paper --zone="my-preferred-zone"`
+`gcloud compute instances create-with-container my-ib-gateway --container-image="docker.io/dvasdekis/ib-gateway-docker:v978" --container-env-file="./ibgateway.env" --machine-type=e2-small --container-env TWSUSERID="$tws_user_id",TWSPASSWORD="$tws_password",TRADING_MODE=paper --zone="my-preferred-zone"`
 
 #### Expected output
 
