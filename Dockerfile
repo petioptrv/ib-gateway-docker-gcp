@@ -6,8 +6,7 @@ LABEL maintainer="Dimitri Vasdekis <dvasdekis@gmail.com>"
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Chicago
 
-
-RUN apt-get -qq --force-yes update && apt-get -qq --force-yes install unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common curl supervisor x11vnc tmpreaper python3-pip
+RUN apt-get -qq update -y && apt-get -qq install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common curl supervisor x11vnc tmpreaper python3-pip
 
 # Setup IB TWS
 RUN mkdir -p /opt/TWS
