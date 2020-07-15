@@ -39,7 +39,7 @@ tws_1  | +======================================================================
 tws_1  | +
 tws_1  | + IBController version 3.2.0.5
 tws_1  | +
-tws_1  | + Running GATEWAY 972
+tws_1  | + Running GATEWAY 978
 tws_1  | +
 tws_1  | + Diagnostic information is logged in:
 tws_1  | +
