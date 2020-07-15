@@ -2,7 +2,7 @@ version: '2'
 services:
   tws:
     build: .
-    #image: dvasdekis/ib-gateway-docker:v972
+    #image: dvasdekis/ib-gateway-docker:v978
     ports:
       - "4001:4001"
     volumes:
@@ -10,7 +10,7 @@ services:
       - ./ib/jts.ini:/root/Jts/jts.ini
     environment:
       - TZ=America/Chicago
-      - TWS_MAJOR_VRSN=972
+      - TWS_MAJOR_VRSN=978
       - IBC_INI=/root/IBController/IBController.ini
       - IBC_PATH=/opt/IBController
       - TWS_PATH=/root/Jts
