@@ -16,7 +16,7 @@ COPY ./ibgateway-stable-standalone-linux-9721x-x64.sh /opt/TWS/ibgateway-stable-
 RUN chmod a+x /opt/TWS/ibgateway-stable-standalone-linux-972-x64.sh
 
 # Install IBController
-RUN mkdir -p /opt/IBController/ && mkdir -p /root/IBController/Logs
+RUN mkdir -p /opt/IBController/ && mkdir -p /opt/IBController/Logs
 WORKDIR /opt/IBController/
 COPY ./IBCLinux-3.8.2/  /opt/IBController/
 RUN chmod -R u+x *.sh && chmod -R u+x scripts/*.sh
