@@ -3,7 +3,6 @@
 This repo takes mvberg's work and optimises it for GCP (targeting a e2-small instance):
 
 * Ubuntu 20.04 (Default of 16.04 isn't docker optimised)
-* Changed to TWS Gateway stable (v972.1v)
 * Removed installers after they are no longer used
 * Works with Stackdriver logging
 * Optimisation of the Java runtime options
