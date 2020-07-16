@@ -36,7 +36,7 @@ tws_1  | Starting x11vnc.
 tws_1  |
 tws_1  | +==============================================================================
 tws_1  | +
-tws_1  | + IBController version 3.2.0.5
+tws_1  | + IBC version 3.8.2
 tws_1  | +
 tws_1  | + Running GATEWAY 978
 tws_1  | +

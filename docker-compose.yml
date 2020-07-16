@@ -3,20 +3,8 @@ services:
   tws:
     build: .
     #image: dvasdekis/ib-gateway-docker:v978
-    ports:
-      - "4001:4001"
-    volumes:
-      - ./ib/IBController.ini:/root/IBController/IBController.ini
-      - ./ib/jts.ini:/root/Jts/jts.ini
     environment:
-      - TZ=America/Chicago
-      - TWS_MAJOR_VRSN=978
-      - IBC_INI=/root/IBController/IBController.ini
-      - IBC_PATH=/opt/IBController
-      - TWS_PATH=/root/Jts
-      - TWS_CONFIG_PATH=/root/Jts_config
-      - LOG_PATH=/opt/IBController/Logs
-      - JAVA_PATH=/opt/i4j_jres/1.8.0_152-tzdata2019c/bin
+      - TWS_MAJOR_VRSN=${TWS_GATEWAY_VERSION}
       - TRADING_MODE=${TWS_TRADING_MODE}
       - TWSUSERID=${TWS_USER_ID}
       - TWSPASSWORD=${TWS_PASSWORD}
