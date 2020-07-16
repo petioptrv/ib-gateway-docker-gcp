@@ -5,13 +5,17 @@ LABEL maintainer="Dimitri Vasdekis <dvasdekis@gmail.com>"
 # Set Env vars
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=America/Chicago
+ENV TWS_MAJOR_VRSN=978
 ENV IBC_VERSION=3.8.2
 ENV IBC_INI=/root/IBController/IBController.ini
 ENV IBC_PATH=/opt/IBController
-ENV TWS_PATH=/root/Jts/ibgateway
+ENV TWS_PATH=/root/Jts
 ENV TWS_CONFIG_PATH=/root/Jts_config
 ENV LOG_PATH=/opt/IBController/Logs
 ENV JAVA_PATH=/opt/i4j_jres/1.8.0_152-tzdata2019c/bin
+ENV APP=GATEWAY
+ENV XVFB_ARGS="-ac -screen 0 1024x768x16 +extension RANDR"
+ENV DISPLAY=:0
 
 RUN apt-get -qq update -y && apt-get -qq install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common curl supervisor x11vnc tmpreaper python3-pip
 
@@ -27,13 +31,10 @@ WORKDIR /opt/IBController/
 COPY ./IBCLinux-3.8.2/  /opt/IBController/
 RUN chmod -R u+x *.sh && chmod -R u+x scripts/*.sh
 
-WORKDIR /
-
 # Install TWS
+WORKDIR /
 RUN yes n | /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
 RUN rm /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
-
-ENV DISPLAY :0
 
 # Below files copied during build to enable operation without volume mount
 COPY ./ib/IBController.ini /root/IBController/IBController.ini

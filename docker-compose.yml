@@ -4,12 +4,9 @@ services:
     build: .
     #image: dvasdekis/ib-gateway-docker:v978
     environment:
-      - TWS_MAJOR_VRSN=${TWS_GATEWAY_VERSION}
       - TRADING_MODE=${TWS_TRADING_MODE}
       - TWSUSERID=${TWS_USER_ID}
       - TWSPASSWORD=${TWS_PASSWORD}
       - VNC_PASSWORD=sgym7y9h57wkfha
       - FIXUSERID=
       - FIXPASSWORD=
-      - APP=GATEWAY
-      - XVFB_ARGS="-ac -screen 0 1024x768x16 +extension RANDR"
