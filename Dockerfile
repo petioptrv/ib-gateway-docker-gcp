@@ -15,7 +15,6 @@ ENV LOG_PATH=/opt/IBController/Logs
 ENV JAVA_PATH=/opt/i4j_jres/1.8.0_152-tzdata2019c/bin
 ENV APP=GATEWAY
 ENV XVFB_ARGS="-ac -screen 0 1024x768x16 +extension RANDR"
-ENV DISPLAY=:0
 
 RUN apt-get -qq update -y && apt-get -qq install -y unzip xvfb libxtst6 libxrender1 libxi6 socat software-properties-common curl supervisor x11vnc tmpreaper python3-pip
 
@@ -31,10 +30,14 @@ WORKDIR /opt/IBController/
 COPY ./IBCLinux-3.8.2/  /opt/IBController/
 RUN chmod -R u+x *.sh && chmod -R u+x scripts/*.sh
 
-# Install TWS
 WORKDIR /
+
+# Install TWS
 RUN yes n | /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
 RUN rm /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
+
+# Must be set after install of IBGateway
+ENV DISPLAY :0
 
 # Below files copied during build to enable operation without volume mount
 COPY ./ib/IBController.ini /root/IBController/IBController.ini
