@@ -8,11 +8,10 @@ This repo takes mvberg's work and optimises it for GCP (targeting a e2-small ins
 * Optimisation of the Java runtime options
 * VNC scripting (which didn't restart the container on error) fixed via Supervisor
 
-
-IB Gateway running in Docker with [IBC, successor of IB Controller](https://github.com/IbcAlpha/IBC) and VNC
+Despite being optimised for GCP, tt still works nicely in a local Docker instance, with [IBC, successor of IB Controller](https://github.com/IbcAlpha/IBC) 
 
 * TWS Gateway: v978.2c (Current Stable)
-* IB Controller: v3.8.2
+* IBC (new IB Controller): v3.8.2
 
 ### Docker Hub image
 
