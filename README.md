@@ -20,6 +20,7 @@ IB Gateway running in Docker with [IBC, successor of IB Controller](https://gith
 
 ### Getting Started
 
+To start an instance on Google Cloud:
 `gcloud compute instances create-with-container my-ib-gateway --container-image="docker.io/dvasdekis/ib-gateway-docker:v978" --container-env-file="./ibgateway.env" --machine-type=e2-small --container-env TWSUSERID="$tws_user_id",TWSPASSWORD="$tws_password",TRADING_MODE=paper --zone="my-preferred-zone"`
 
 #### Logging in with VNC:
@@ -39,6 +40,13 @@ All IPs on your network are able to connect to your box and place trades - so pl
 
 ### Troubleshooting
 
+##### Read-Only API warning:
+IBC has decided not to support switching off the Read-Only checkbox (on by default) on the API Settings page.
+
+To work around it for some operations, you'll need to write a file called ibg.xml as a new file to `/root/Jts/*encrypted user id*/ibg.xml`. The ibg.xml file can be found in this folder after a succesful run and close, and contains the application's settings from the previous run.
+
+
+##### 
 Sometimes, when running in non-daemon mode, you will see this:
 
 ```java
