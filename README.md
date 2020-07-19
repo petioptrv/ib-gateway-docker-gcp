@@ -1,14 +1,15 @@
-# Interactive Brokers Gateway Docker for GCP ![Build Status](https://github.com/dvasdekis/ib-gateway-docker-gcp/workflows/Test%20and%20Publish/badge.svg "Build Status")
+# Interactive Brokers Gateway in Docker ![Build Status](https://github.com/dvasdekis/ib-gateway-docker-gcp/workflows/Test%20and%20Publish/badge.svg "Build Status")
 
-This repo takes mvberg's work and optimises it for GCP (targeting a e2-small instance):
+This repo takes mvberg's work and optimises it (targeting a e2-small instance on GCP):
 
+* Replaces IB Controller with IBC
 * Ubuntu 20.04 (Default of 16.04 isn't docker optimised)
 * Removed installers after they are no longer used
 * Works with Stackdriver logging
 * Optimisation of the Java runtime options
 * VNC scripting (which didn't restart the container on error) fixed via Supervisor
 
-Despite being optimised for GCP, tt still works nicely in a local Docker instance, with [IBC, successor of IB Controller](https://github.com/IbcAlpha/IBC) 
+Despite being optimised for GCP, this still works nicely in a local Docker instance, with [IBC, successor of IB Controller](https://github.com/IbcAlpha/IBC) 
 
 * TWS Gateway: v978.2c (Current Stable)
 * IBC (new IB Controller): v3.8.2
@@ -18,6 +19,8 @@ Despite being optimised for GCP, tt still works nicely in a local Docker instanc
 * [dvasdekis/ib-gateway-docker](https://hub.docker.com/r/dvasdekis/ib-gateway-docker)
 
 ### Getting Started
+
+Start an instance locally using Docker-Compose.
 
 To start an instance on Google Cloud:
 `gcloud compute instances create-with-container my-ib-gateway --container-image="docker.io/dvasdekis/ib-gateway-docker:v978" --container-env-file="./ibgateway.env" --machine-type=e2-small --container-env TWSUSERID="$tws_user_id",TWSPASSWORD="$tws_password",TRADING_MODE=paper --zone="my-preferred-zone"`
