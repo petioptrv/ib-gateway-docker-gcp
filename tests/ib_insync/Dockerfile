@@ -13,9 +13,5 @@ ENV TZ=America/Chicago
 # Install any Python package requirements
 COPY requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
-COPY src/ /tmp
-WORKDIR /tmp
-CMD ["ls","-R"]
-
-# Execute Supervisord as key - to ssh in, commend out the line below
-#CMD ["python","/usr/bin/src/run_tests.py"]
+COPY src/ /tmp/src
+CMD ["python","/tmp/src/run_tests.py"]
