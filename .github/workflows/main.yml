@@ -1,0 +1,35 @@
+name: Test and Publish
+on: push
+jobs:
+  test:
+    name: Test API on IB (Paper)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+#      - name: Build the stack
+#        env: # Or as an environment variable
+#          TWS_TRADING_MODE: paper
+#          TWS_USER_ID: ${{ secrets.IB_PAPER_USERNAME }}
+#          TWSPASSWORD: ${{ secrets.IB_PAPER_PASSWORD }}
+#        run: docker-compose up -d --quiet-pull --build tws
+      - name: Test TWS
+        env:
+          TWS_TRADING_MODE: paper
+          TWS_USER_ID: ${{ secrets.IB_PAPER_USERNAME }}
+          TWS_PASSWORD: ${{ secrets.IB_PAPER_PASSWORD }}
+          IB_GATEWAY_URLPORT: 4004
+        run: docker-compose up --quiet-pull --exit-code-from test --build
+  push_to_docker_hub:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Push to Docker Hub
+        uses: docker/build-push-action@v1
+        with:
+          username: dvasdekis
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: dvasdekis/ib-gateway-docker
+          tag_with_ref: true

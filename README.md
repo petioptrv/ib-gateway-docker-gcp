@@ -1,4 +1,4 @@
-# Interactive Brokers Gateway Docker for GCP
+# Interactive Brokers Gateway Docker for GCP ![Build Status](https://github.com/dvasdekis/ib-gateway-docker-gcp/workflows/Test%20and%20Publish/badge.svg "Build Status")
 
 This repo takes mvberg's work and optimises it for GCP (targeting a e2-small instance):
 
@@ -30,7 +30,7 @@ To start an instance on Google Cloud:
 
 #### Expected output
 
-You will now have the IB Gateway app running on port 4003.
+You will now have the IB Gateway app running on port 4003 for Live trading and 4004 for Paper trading.
 
 See [docker-compose.yml](docker-compose.yml) for configuring VNC password, accounts and trading mode.
 
