@@ -7,9 +7,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
+        env: # Or as an environment variable
+          TWS_TRADING_MODE: paper
+          TWS_USER_ID: ${{ secrets.IB_PAPER_USERNAME }}
+          TWSPASSWORD: ${{ secrets.IB_PAPER_PASSWORD }}
         run: docker-compose up -d --quiet-pull --build tws
       - name: Test
-        run: sleep 60 && docker-compose up --quiet-pull --exit-code-from test --build test
+        run: sleep 60 && cd tests/ib_insync && docker run -e DEBUG web python console.py
   push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
