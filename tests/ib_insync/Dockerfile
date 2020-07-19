@@ -17,4 +17,4 @@ COPY src/ /usr/bin
 CMD ["ls","-R"]
 
 # Execute Supervisord as key - to ssh in, commend out the line below
-CMD ["python","/usr/bin/src/run_tests.py"]
+#CMD ["python","/usr/bin/src/run_tests.py"]
