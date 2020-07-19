@@ -2,7 +2,7 @@
 # This is the dockerfile for our Exch-Fetcher instance
 
 # Shell can be run via docker run -it *hedgecheap1/mono_exc:tag*
-FROM python:3.8-slim
+FROM python:3
 
 MAINTAINER Dimitri Vasdekis <dimitri@hedgecheap.com>
 
