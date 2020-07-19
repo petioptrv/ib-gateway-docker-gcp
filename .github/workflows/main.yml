@@ -7,9 +7,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: docker-compose up -d
+        run: docker-compose up -d --quiet-pull --build tws
       - name: Test
-        run: docker run something
+        run: sleep 60 && docker-compose up --quiet-pull --exit-code-from test --build test
   push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
