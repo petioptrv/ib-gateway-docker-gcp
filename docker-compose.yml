@@ -1,4 +1,4 @@
-version: '2'
+version: '3.4'
 services:
   tws:
     build: .
@@ -16,3 +16,12 @@ services:
 #   Uncomment the below to use VNC
 #    ports:
 #      - 5901:5900
+  test:
+    build: tests/ib_insync
+    environment:
+      - TRADING_MODE=${TWS_TRADING_MODE}
+      - TWSUSERID=${TWS_USER_ID}
+      - TWSPASSWORD=${TWS_PASSWORD}
+      - FIXUSERID=
+      - FIXPASSWORD=
+      - XVFB_ARGS="-ac -screen 0 1024x768x16 +extension RANDR"
