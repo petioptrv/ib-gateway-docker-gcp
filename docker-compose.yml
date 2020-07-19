@@ -15,8 +15,8 @@ services:
       - XVFB_ARGS="-ac -screen 0 1024x768x16 +extension RANDR"
     restart: always
 #   Uncomment the below to use VNC
-#    ports:
-#      - 5901:5900
+    ports:
+      - 5901:5900
   test:
     build: tests/ib_insync
     environment:
