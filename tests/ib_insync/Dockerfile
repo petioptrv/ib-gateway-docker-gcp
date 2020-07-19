@@ -14,6 +14,7 @@ ENV TZ=America/Chicago
 COPY requirements.txt /tmp/
 RUN pip install -r /tmp/requirements.txt
 COPY src/ /usr/bin
+WORKDIR /usr/bin
 CMD ["ls","-R"]
 
 # Execute Supervisord as key - to ssh in, commend out the line below
