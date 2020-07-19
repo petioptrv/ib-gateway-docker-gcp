@@ -24,3 +24,5 @@ services:
       - IB_GATEWAY_URLPORT=4003
       - MKT_DATA_TYPE=4
     restart: on-failure
+    depends_on:
+      - tws
