@@ -13,7 +13,7 @@ jobs:
           TWSPASSWORD: ${{ secrets.IB_PAPER_PASSWORD }}
         run: docker-compose up -d --quiet-pull --build tws
       - name: Test
-        run: sleep 60 && cd tests/ib_insync && docker run -e DEBUG web python console.py
+        run: docker-compose up --quiet-pull --exit-code-from flyway --build flyway
   push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
+          username: dvasdekis
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: my-docker-hub-namespace/my-docker-hub-repository
+          repository: dvasdekis/ib-gateway-docker
           tag_with_ref: true
