@@ -13,7 +13,7 @@ jobs:
           TWSPASSWORD: ${{ secrets.IB_PAPER_PASSWORD }}
         run: docker-compose up -d --quiet-pull --build tws
       - name: Test
-        run: docker-compose up --quiet-pull --exit-code-from flyway --build flyway
+        run: docker-compose up --quiet-pull --exit-code-from test --build test
   push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
