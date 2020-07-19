@@ -17,7 +17,7 @@ jobs:
           TWS_TRADING_MODE: paper
           TWS_USER_ID: ${{ secrets.IB_PAPER_USERNAME }}
           TWSPASSWORD: ${{ secrets.IB_PAPER_PASSWORD }}
-        run: docker-compose up -d --quiet-pull --build tws && sleep 30 && docker-compose up --no-recreate --quiet-pull --exit-code-from test --build test
+        run: docker-compose up --quiet-pull --exit-code-from test --build test
   push_to_docker_hub:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest

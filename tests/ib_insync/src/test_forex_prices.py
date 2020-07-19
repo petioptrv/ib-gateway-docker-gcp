@@ -93,6 +93,7 @@ def start_ticker_feed(contracts, ib_conn):
 
 
 def main():
+    ib_insync.util.sleep(60)
     ib_conn = connect_to_ib()
     logging.info("test_forex_prices connected to IB")
     contracts = get_forex_pairs(ib_conn)
