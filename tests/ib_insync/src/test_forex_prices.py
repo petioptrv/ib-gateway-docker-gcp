@@ -47,7 +47,7 @@ def get_forex_pairs(ib_conn):
     :param db_conn:
     :return:
     """
-    currency_pairs = ["USDAUD", "USDGPY", "USDEUR"]
+    currency_pairs = ["USDAUD", "USDGBP", "USDEUR"]
     contracts = [ib_insync.Forex(pair) for pair in currency_pairs]
     ib_conn.qualifyContracts(*contracts)
     return contracts
