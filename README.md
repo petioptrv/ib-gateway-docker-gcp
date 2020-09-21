@@ -39,6 +39,10 @@ See [docker-compose.yml](docker-compose.yml) for configuring VNC password, accou
 
 All IPs on your network are able to connect to your box and place trades - so please do not open your box to the internet.
 
+#### Running the container locally:
+
+Use the command `docker run -e TWSUSERID=tws_user_id -e TWSPASSWORD=tws_password -e TRADING_MODE=paper -e XVFB_ARGS='"-ac -screen 0 1024x768x16 +extension RANDR"' -p 4002:4004 dvasdekis/ib-gateway-docker`
+to run a container instance locally and connect to it on port 4002.
 
 ### Troubleshooting
 
