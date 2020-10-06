@@ -21,8 +21,8 @@ RUN apt-get -qq update -y && apt-get -qq install -y unzip xvfb libxtst6 libxrend
 # Setup IB TWS
 RUN mkdir -p /opt/TWS
 WORKDIR /opt/TWS
-COPY ./ibgateway-stable-standalone-linux-9782c-x64.sh /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
-RUN chmod a+x /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
+COPY ./tws-stable-standalone-linux-x64.sh /opt/TWS/tws-stable-standalone-linux-x64.sh
+RUN chmod a+x /opt/TWS/tws-stable-standalone-linux-x64.sh
 
 # Install IBController
 RUN mkdir -p /opt/IBController/ && mkdir -p /opt/IBController/Logs
@@ -33,8 +33,8 @@ RUN chmod -R u+x *.sh && chmod -R u+x scripts/*.sh
 WORKDIR /
 
 # Install TWS
-RUN yes n | /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
-RUN rm /opt/TWS/ibgateway-stable-standalone-linux-x64.sh
+RUN yes n | /opt/TWS/tws-stable-standalone-linux-x64.sh
+RUN rm /opt/TWS/tws-stable-standalone-linux-x64.sh
 
 # Must be set after install of IBGateway
 ENV DISPLAY :0
@@ -45,8 +45,8 @@ RUN mkdir -p /root/Jts/
 COPY ./ib/jts.ini /root/Jts/jts.ini
 
 # Overwrite vmoptions file
-RUN rm -f /root/Jts/ibgateway/978/ibgateway.vmoptions
-COPY ./ibgateway.vmoptions /root/Jts/ibgateway/978/ibgateway.vmoptions
+RUN rm -f /root/Jts/978/tws.vmoptions
+COPY ./ibgateway.vmoptions /root/Jts/978/tws.vmoptions
 
 # Install Python requirements
 RUN pip3 install supervisor

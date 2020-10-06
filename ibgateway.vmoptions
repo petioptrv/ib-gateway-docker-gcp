@@ -31,8 +31,8 @@
 -XX:+ExitOnOutOfMemoryError
 
 
--Dinstaller.uuid=ffa5c054-0b73-4c18-b588-1933a1a85d4f
--DvmOptionsPath=/root/Jts/ibgateway/978/ibgateway.vmoptions
+-Dinstaller.uuid=f0c1f71a-6514-4fd4-bf7d-e850530ae46f
+-DvmOptionsPath=/root/Jts/978/tws.vmoptions
 -Dsun.awt.nopixfmt=true
 -Dsun.java2d.noddraw=true
 -Dswing.boldMetal=false

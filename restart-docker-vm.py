@@ -16,7 +16,7 @@ def main():
         print("Clearing out temp space")
         subprocess.run(["tmpreaper", "--all", "--showdeleted", "--force", "1h", "/tmp"], capture_output=True)
         print("Emptying log directories")
-        subprocess.run(["find", "./myfolder", "-mindepth", "1", "!", "-regex", "'^/root/Jts/ibgateway\(/.*\)?'", "-delete"], capture_output=True)
+        subprocess.run(["find", "./myfolder", "-mindepth", "1", "!", "-regex", "'^/root/Jts\(/.*\)?'", "-delete"], capture_output=True)
         print("Killing supervisor")
         os.kill(os.getppid(), signal.SIGTERM)
 
